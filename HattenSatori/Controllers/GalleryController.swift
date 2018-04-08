@@ -19,28 +19,38 @@ class GalleryController: BaseMenuController, CAAnimationDelegate {
         return nil
     }
     
-    var imageHolder: UIView!
+    @IBOutlet weak var imageHolder: UIView!
+    
     var images: [UIImage] = []
     var displayedImage = 0
     var nextShouldFromLeft: Bool = true
     var nextShouldFromTop: Bool = true
     
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        scrollView.minimumZoomScale = 1.0
+        scrollView.maximumZoomScale = 6.0
+        return imageHolder
+    }
+    
+    var leftClick: UIView!
+    var rightClick: UIView!
+    var centerClick: UIView!
+    var btnContinue: UIButton!
     override func viewDidLoad() {
-        imageHolder = UIView(frame: self.view.bounds)
-        self.view.addSubview(imageHolder)
+        self.imageHolder.isUserInteractionEnabled = true
         
         let clickArea = self.view.bounds.width / 3
-        let leftClick = UIView(frame: CGRect(x: 0, y: 50, width: clickArea, height: self.view.bounds.height - 50)).initView()
+        leftClick = UIView(frame: CGRect(x: 0, y: 50, width: clickArea, height: self.view.bounds.height - 50)).initView()
         leftClick.isUserInteractionEnabled = true
         let leftGesture = UITapGestureRecognizer(target: self, action: #selector(prevImage))
         leftClick.addGestureRecognizer(leftGesture)
         
-        let rightClick = UIView(frame: CGRect(x: self.view.bounds.width - clickArea, y: 50, width: clickArea, height: self.view.bounds.height - 50)).initView()
+        rightClick = UIView(frame: CGRect(x: self.view.bounds.width - clickArea, y: 50, width: clickArea, height: self.view.bounds.height - 50)).initView()
         rightClick.isUserInteractionEnabled = true
         let rightGesture = UITapGestureRecognizer(target: self, action: #selector(nextImage))
         rightClick.addGestureRecognizer(rightGesture)
         
-        let centerClick = UIView(frame: CGRect(x: clickArea, y: 50, width: clickArea, height: self.view.bounds.height - 50)).initView()
+        centerClick = UIView(frame: CGRect(x: clickArea, y: 50, width: clickArea, height: self.view.bounds.height - 50)).initView()
         centerClick.isUserInteractionEnabled = true
         let centerGesture = UITapGestureRecognizer(target: self, action: #selector(pauseImage))
         centerClick.addGestureRecognizer(centerGesture)
@@ -48,6 +58,13 @@ class GalleryController: BaseMenuController, CAAnimationDelegate {
         self.view.addSubview(leftClick)
         self.view.addSubview(rightClick)
         self.view.addSubview(centerClick)
+        
+        btnContinue = CustomButton(frame: CGRect(x: (self.view.bounds.width - 200) / 2, y: self.view.bounds.height - 50, width: 200, height: 30)).initView()
+        btnContinue.setTitle("Continue Play", for: .normal)
+        btnContinue.isHidden = true
+        btnContinue.addTarget(self, action: #selector(pauseImage), for: .touchUpInside)
+        
+        self.view.addSubview(btnContinue)
         
         super.viewDidLoad()
         
@@ -62,11 +79,21 @@ class GalleryController: BaseMenuController, CAAnimationDelegate {
     }
     
     func prevImage() {
-        showImage(step: -1, duration: 0.5)
+        if pauseTheShow {
+            pauseImage()
+        } else {
+            showImage(step: -1, duration: 0.5)
+            startTimer()
+        }
     }
     
     func nextImage() {
-        showImage(step: 1, duration: 0.5)
+        if pauseTheShow {
+            pauseImage()
+        } else {
+            showImage(step: 1, duration: 0.5)
+            startTimer()
+        }
     }
     
     func pauseImage() {
@@ -76,9 +103,15 @@ class GalleryController: BaseMenuController, CAAnimationDelegate {
         } else {
             pauseAnimation()
         }
+        
+        leftClick.isHidden = pauseTheShow
+        rightClick.isHidden = pauseTheShow
+        centerClick.isHidden = pauseTheShow
+        btnContinue.isHidden = !pauseTheShow
     }
     
-    func pauseAnimation(){
+    func pauseAnimation() {
+        timer?.invalidate()
         if let layer = self.presentationLayer {
             let pausedTime = layer.convertTime(CACurrentMediaTime(), from: nil)
             layer.speed = 0.0
@@ -87,6 +120,7 @@ class GalleryController: BaseMenuController, CAAnimationDelegate {
     }
     
     func resumeAnimation(){
+        startTimer()
         if let layer = self.presentationLayer {
             let pausedTime = layer.timeOffset
             layer.speed = 1.0
@@ -98,15 +132,25 @@ class GalleryController: BaseMenuController, CAAnimationDelegate {
     }
     
     let slidingDuration: CFTimeInterval = 8
-    
+    var timer: Timer?
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         pauseTheShow = false
         showImage(step: 0, duration: slidingDuration)
+        startTimer()
+    }
+
+    func startTimer() {
+        self.timer?.invalidate()
+        self.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
+    }
+    
+    @objc func update() {
+        showImage(step: 1, duration: slidingDuration)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        pauseTheShow = true
+        self.timer?.invalidate()
     }
     
     var pauseTheShow: Bool = false
@@ -217,10 +261,6 @@ class GalleryController: BaseMenuController, CAAnimationDelegate {
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         while self.imageHolder.subviews.count > 2 {
             self.imageHolder.subviews.first?.removeFromSuperview()
-        }
-        
-        if anim.duration > 1 {
-            showImage(step: 1, duration: slidingDuration)
         }
     }
 }

@@ -14,7 +14,7 @@ class CustomButton: UIButton {
         _ = super.initView()
         
         if self.backgroundColor.isEmpty {
-            self.backgroundColor = HattenColor.primary.color
+            self.backgroundColor = HattenColor.orange.color
         }
         
         self.tintColor = HattenColor.white.color

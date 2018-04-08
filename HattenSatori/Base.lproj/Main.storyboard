@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="oAh-1R-92t">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G1114" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="oAh-1R-92t">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -380,8 +380,39 @@
                     <view key="view" contentMode="scaleToFill" id="y5h-uk-P16">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iKu-o6-pDa" userLabel="Zooming">
+                                <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z0j-yF-e6W">
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="748"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="z0j-yF-e6W" firstAttribute="top" secondItem="iKu-o6-pDa" secondAttribute="top" id="8FE-SW-uBX"/>
+                                    <constraint firstItem="z0j-yF-e6W" firstAttribute="centerY" secondItem="iKu-o6-pDa" secondAttribute="centerY" id="Kv3-PF-t4e"/>
+                                    <constraint firstItem="z0j-yF-e6W" firstAttribute="leading" secondItem="iKu-o6-pDa" secondAttribute="leading" id="Zc1-lh-hob"/>
+                                    <constraint firstAttribute="trailing" secondItem="z0j-yF-e6W" secondAttribute="trailing" id="f0I-4E-wnC"/>
+                                    <constraint firstItem="z0j-yF-e6W" firstAttribute="centerX" secondItem="iKu-o6-pDa" secondAttribute="centerX" id="h7B-xo-ub8"/>
+                                    <constraint firstAttribute="bottom" secondItem="z0j-yF-e6W" secondAttribute="bottom" id="mU6-1b-BoU"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="oAh-1R-92t" id="tlA-3m-icI"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iKu-o6-pDa" firstAttribute="leading" secondItem="y5h-uk-P16" secondAttribute="leading" id="2sV-98-3Qx"/>
+                            <constraint firstAttribute="trailing" secondItem="iKu-o6-pDa" secondAttribute="trailing" id="g6n-TD-aMp"/>
+                            <constraint firstItem="iKu-o6-pDa" firstAttribute="top" secondItem="tqH-dW-Wcp" secondAttribute="bottom" id="gbT-cu-GOE"/>
+                            <constraint firstItem="N7p-rh-Gst" firstAttribute="top" secondItem="iKu-o6-pDa" secondAttribute="bottom" id="v90-3r-4Bz"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageHolder" destination="z0j-yF-e6W" id="IP0-DE-oVX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rxo-16-dyv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
