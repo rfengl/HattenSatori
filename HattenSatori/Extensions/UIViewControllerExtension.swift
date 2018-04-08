@@ -15,7 +15,7 @@ extension UIViewController: UITextFieldDelegate, UITextViewDelegate, Notificatio
 {
     open override func awakeFromNib() {
         if let image = getBackgroundImage() {
-            self.view.addBackground(image: image)
+            _ = self.view.addBackground(image: image)
         }
     }
     

@@ -12,6 +12,10 @@
 		470F67402079250400E1A123 /* splashscreen.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 470F673F2079250400E1A123 /* splashscreen.mp4 */; };
 		470F6746207934E600E1A123 /* GlowingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470F6745207934E600E1A123 /* GlowingButton.swift */; };
 		470F674A2079422B00E1A123 /* VideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470F67492079422B00E1A123 /* VideoController.swift */; };
+		471CEAEE207A14CF0080CA0B /* BaseMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471CEAED207A14CF0080CA0B /* BaseMenuController.swift */; };
+		471CEAF0207A17DE0080CA0B /* GalleryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471CEAEF207A17DE0080CA0B /* GalleryController.swift */; };
+		471CEAF2207A1D9D0080CA0B /* FacilityPlanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471CEAF1207A1D9D0080CA0B /* FacilityPlanController.swift */; };
+		471CEB37207A63FC0080CA0B /* Media in Resources */ = {isa = PBXBuildFile; fileRef = 471CEB36207A63FC0080CA0B /* Media */; };
 		473CA2132076475B00379168 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CA2122076475B00379168 /* AppDelegate.swift */; };
 		473CA2182076475B00379168 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 473CA2162076475B00379168 /* Main.storyboard */; };
 		473CA21A2076475B00379168 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 473CA2192076475B00379168 /* Assets.xcassets */; };
@@ -123,6 +127,10 @@
 		470F673F2079250400E1A123 /* splashscreen.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = splashscreen.mp4; sourceTree = "<group>"; };
 		470F6745207934E600E1A123 /* GlowingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlowingButton.swift; sourceTree = "<group>"; };
 		470F67492079422B00E1A123 /* VideoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoController.swift; sourceTree = "<group>"; };
+		471CEAED207A14CF0080CA0B /* BaseMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseMenuController.swift; sourceTree = "<group>"; };
+		471CEAEF207A17DE0080CA0B /* GalleryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryController.swift; sourceTree = "<group>"; };
+		471CEAF1207A1D9D0080CA0B /* FacilityPlanController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacilityPlanController.swift; sourceTree = "<group>"; };
+		471CEB36207A63FC0080CA0B /* Media */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Media; sourceTree = "<group>"; };
 		473CA20F2076475B00379168 /* HattenSatori.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HattenSatori.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		473CA2122076475B00379168 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		473CA2172076475B00379168 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -273,6 +281,7 @@
 				473CA25F2076674A00379168 /* Objects */,
 				473CA2EF20766AF800379168 /* Services */,
 				473CA2192076475B00379168 /* Assets.xcassets */,
+				471CEB36207A63FC0080CA0B /* Media */,
 				473CA2122076475B00379168 /* AppDelegate.swift */,
 				473CA2162076475B00379168 /* Main.storyboard */,
 				473CA21E2076475B00379168 /* Info.plist */,
@@ -403,10 +412,13 @@
 				473CA27D2076688300379168 /* BaseNavigationController.swift */,
 				473CA27E2076688300379168 /* BaseTableController.swift */,
 				473CA27F2076688300379168 /* BaseTableViewController.swift */,
+				471CEAED207A14CF0080CA0B /* BaseMenuController.swift */,
 				473CA2DB2076698500379168 /* ViewController.swift */,
 				470F673820791D2B00E1A123 /* HomeController.swift */,
 				470F673C207923A900E1A123 /* SplashScreenController.swift */,
 				470F67492079422B00E1A123 /* VideoController.swift */,
+				471CEAEF207A17DE0080CA0B /* GalleryController.swift */,
+				471CEAF1207A1D9D0080CA0B /* FacilityPlanController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -514,6 +526,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				473CA2762076678E00379168 /* Gloss in Resources */,
+				471CEB37207A63FC0080CA0B /* Media in Resources */,
 				473CA21A2076475B00379168 /* Assets.xcassets in Resources */,
 				470F67402079250400E1A123 /* splashscreen.mp4 in Resources */,
 				473CA2182076475B00379168 /* Main.storyboard in Resources */,
@@ -582,6 +595,7 @@
 				473CA2D8207668C100379168 /* RoundedView.swift in Sources */,
 				473CA2EB207669E700379168 /* HTTPManager.swift in Sources */,
 				473CA2BF207668C100379168 /* CustomPasswordField.swift in Sources */,
+				471CEAEE207A14CF0080CA0B /* BaseMenuController.swift in Sources */,
 				470F673920791D2B00E1A123 /* HomeController.swift in Sources */,
 				473CA2D3207668C100379168 /* PrimaryBackground.swift in Sources */,
 				470F674A2079422B00E1A123 /* VideoController.swift in Sources */,
@@ -590,6 +604,7 @@
 				473CA2C2207668C100379168 /* CustomTableViewCell.swift in Sources */,
 				473CA2C0207668C100379168 /* CustomPhoneField.swift in Sources */,
 				473CA2EE207669E700379168 /* SpeedManager.swift in Sources */,
+				471CEAF0207A17DE0080CA0B /* GalleryController.swift in Sources */,
 				473CA2BB207668C100379168 /* CustomImageView.swift in Sources */,
 				473CA255207666AA00379168 /* UIButtonExtension.swift in Sources */,
 				473CA30420766C4000379168 /* UploadResponse.swift in Sources */,
@@ -600,6 +615,7 @@
 				473CA2DC2076698500379168 /* ViewController.swift in Sources */,
 				473CA2B1207668C100379168 /* BaseTableViewCell.swift in Sources */,
 				473CA2EC207669E700379168 /* ImageManager.swift in Sources */,
+				471CEAF2207A1D9D0080CA0B /* FacilityPlanController.swift in Sources */,
 				473CA2832076688300379168 /* BaseNavigationController.swift in Sources */,
 				473CA2D1207668C100379168 /* NotificationBarButtonItem.swift in Sources */,
 				473CA26D2076678E00379168 /* BaseFormReturnData.swift in Sources */,
