@@ -119,6 +119,8 @@
 		473CA30720766D5600379168 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 473CA30520766D5600379168 /* Model.xcdatamodeld */; };
 		473CA30920766DDD00379168 /* PickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CA30820766DDD00379168 /* PickerController.swift */; };
 		5B7ADC0182B1B4E5AB0EFE59 /* Pods_HattenSatori.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4127D51EF6DF2FA3C822B83 /* Pods_HattenSatori.framework */; };
+		8B43FE2E207A6E7E0086DEBE /* DeveloperController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B43FE2D207A6E7E0086DEBE /* DeveloperController.swift */; };
+		8B43FE30207A72B10086DEBE /* USPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B43FE2F207A72B10086DEBE /* USPController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -237,6 +239,8 @@
 		473CA30820766DDD00379168 /* PickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerController.swift; sourceTree = "<group>"; };
 		60AB74C2797C569E75558633 /* Pods-HattenSatori.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HattenSatori.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HattenSatori/Pods-HattenSatori.debug.xcconfig"; sourceTree = "<group>"; };
 		69A186D83B0A2CFC23EB8223 /* Pods-HattenSatori.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HattenSatori.release.xcconfig"; path = "Pods/Target Support Files/Pods-HattenSatori/Pods-HattenSatori.release.xcconfig"; sourceTree = "<group>"; };
+		8B43FE2D207A6E7E0086DEBE /* DeveloperController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeveloperController.swift; sourceTree = "<group>"; };
+		8B43FE2F207A72B10086DEBE /* USPController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = USPController.swift; sourceTree = "<group>"; };
 		D4127D51EF6DF2FA3C822B83 /* Pods_HattenSatori.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HattenSatori.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -419,6 +423,8 @@
 				470F67492079422B00E1A123 /* VideoController.swift */,
 				471CEAEF207A17DE0080CA0B /* GalleryController.swift */,
 				471CEAF1207A1D9D0080CA0B /* FacilityPlanController.swift */,
+				8B43FE2D207A6E7E0086DEBE /* DeveloperController.swift */,
+				8B43FE2F207A72B10086DEBE /* USPController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -622,6 +628,7 @@
 				473CA2BE207668C100379168 /* CustomLine.swift in Sources */,
 				473CA2CF207668C100379168 /* NavigationBackButton.swift in Sources */,
 				473CA24F207666AA00379168 /* NSManagedObjectExtension.swift in Sources */,
+				8B43FE30207A72B10086DEBE /* USPController.swift in Sources */,
 				473CA2D9207668C100379168 /* SignaturePanel.swift in Sources */,
 				473CA2DA207668C100379168 /* TextAreaLine.swift in Sources */,
 				473CA22F2076607100379168 /* ImageDrawer.swift in Sources */,
@@ -648,6 +655,7 @@
 				473CA248207666AA00379168 /* ArrayExtension.swift in Sources */,
 				473CA25A207666AA00379168 /* UITabBarControllerExtension.swift in Sources */,
 				473CA250207666AA00379168 /* NSMutableDataExtension.swift in Sources */,
+				8B43FE2E207A6E7E0086DEBE /* DeveloperController.swift in Sources */,
 				473CA2852076688300379168 /* BaseTableViewController.swift in Sources */,
 				473CA251207666AA00379168 /* NSObjectExtensions.swift in Sources */,
 				473CA2782076678E00379168 /* OrderedDictionary.swift in Sources */,
