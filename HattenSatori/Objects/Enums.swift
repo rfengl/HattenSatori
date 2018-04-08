@@ -58,6 +58,7 @@ enum MyError: Error {
 
 enum MenuItem: String {
     case Home
+    case Developer
     case USP
     case Gallery
     case Plan
@@ -67,15 +68,15 @@ enum MenuItem: String {
     
     static var items: [MenuItem] {
         get {
-            return [MenuItem.Home, MenuItem.USP, MenuItem.Gallery, MenuItem.Plan, MenuItem.Design, MenuItem.Location, MenuItem.Enquiry]
+            return [MenuItem.Home, MenuItem.Developer, MenuItem.USP, MenuItem.Gallery, MenuItem.Plan, MenuItem.Design, MenuItem.Location, MenuItem.Enquiry]
         }
     }
     
     var subMenu: [SubMenuItem] {
         get {
             switch self {
-            case .Home:
-                return [SubMenuItem.Developer]
+//            case .Home:
+//                return [SubMenuItem.Developer]
             case .Plan:
                 return [SubMenuItem.FacilityPlan, SubMenuItem.LayoutPlan, SubMenuItem.LevelPlan]
             default:
@@ -86,7 +87,7 @@ enum MenuItem: String {
 }
 
 enum SubMenuItem: String {
-    case Developer
+//    case Developer
     case FacilityPlan
     case LayoutPlan
     case LevelPlan
